@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: container_clonar_1
+    ports:
+      - "8095:3000"
+    volumes:
+      - node_app_data:/usr/src/app
+    networks:
+      - app-network
+    restart: always
+volumes:
+  node_app_data:
+
+networks:
+  app-network:
+    driver: bridge
